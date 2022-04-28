@@ -100,3 +100,7 @@ m_af%>%
 # will plot the associated random sample
 ```
 ![](https://github.com/E-Durland/poolseq_variance/blob/main/rep_var.png)
+
+## we see that there is some variance between replicates for some time points but, overall, the variability between replicates (biological and technical variation) is surprisingly small.  
+
+*note:  allele frequencies represented here are: 'Read A'/('Read A' + 'Read B') from the raw reads from the sequencing. This is sometimes the minor allele frequency but not always.
