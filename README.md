@@ -1,16 +1,13 @@
----
-title: "Poolseq replicate variance"
-author: "Evan Durland"
-date: "4/28/2022"
-output: html_document
----
+# "Poolseq replicate variance"
+## "Evan Durland"
+## "4/28/2022"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
-#A visualization of variance in estimates of minor allele frequency between independent culture replicates
+## A visualization of variance in estimates of minor allele frequency between independent culture replicates
 
 One of the central assumptions of analyses using pooled DNA sequencing is that the allele frequencies are representative of the broader population. This assumption is vulnerable to several sources of error from sampling bias to PCR duplications to sequencing error. Ideally, technical replicates should be taken from any single population in order to ascertain the extent of the technical variation with this approach. In practice this may not be feasible due to constraints on individual samples or cost of analyses (library prep and sequencing).
 
@@ -94,3 +91,4 @@ m_af%>%
 # In the above code chunk, changing the filter on the dataset (rand, xtrm or boring)
 # will plot the associated random sample
 ```
+![](https://github.com/E-Durland/poolseq_variance/blob/main/rep_var.png)
