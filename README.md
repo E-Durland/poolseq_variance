@@ -1,6 +1,6 @@
-# "Poolseq replicate variance"
-## "Evan Durland"
-## "4/28/2022"
+# Poolseq replicate variance
+## Evan Durland
+## 4/28/2022
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -15,7 +15,7 @@ In our recent study (https://doi.org/10.1098/rspb.2020.3223) we used pooled DNA 
 
 ```{r}
 #load the data:
-df <- read.delim("/AAS-USERS/evan.durland/Documents/Reviews/Hedgecock_rebuttal/response/will_avg_sepAF.txt",sep="\t")
+df <- read.delim("will_avg_sepAF.txt", sep="\t")
 head(df)
 ```
 
