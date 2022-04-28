@@ -54,7 +54,7 @@ m_af$age<-apply(m_af,1,function(x){
 head(m_af)
 m_af$age <- factor(m_af$age,levels=c("D2af","D6af","D10af","D16af","D22Baf"))
 ```
-The entire dataset is *473* loci with *10 406* datapoints in total.
+The entire dataset is **473** loci with **10 406** datapoints in total.
 Much too large to plot in full, individually.
 We can evaluate the nature of the variation in small random samples:
 First create a subset of the loci:
