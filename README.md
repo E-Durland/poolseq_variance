@@ -9,9 +9,15 @@ library(tidyverse)
 
 ## A visualization of variance in estimates of minor allele frequency between independent culture replicates
 
-One of the central assumptions of analyses using pooled DNA sequencing is that the allele frequencies are representative of the broader population. This assumption is vulnerable to several sources of error from sampling bias to PCR duplications to sequencing error. Ideally, technical replicates should be taken from any single population in order to ascertain the extent of the technical variation with this approach. In practice this may not be feasible due to constraints on individual samples or cost of analyses (library prep and sequencing).
+One of the central assumptions of analyses using pooled DNA sequencing is that the allele frequencies are representative of the broader population. This assumption is vulnerable to several sources of error from sampling bias to PCR duplications to sequencing error. 
 
-In our recent study (https://doi.org/10.1098/rspb.2020.3223) we used pooled DNA samples from five replicate cultures of larval oysters to evaluate changes in allele frequencies across larval development. Lacking technical replicates begs the question whether estimates of minor allele frequencies (MAF) in each culture are accurate to the 'true' value of that population. In this scenario, we analyzed variance in MAF across all five biological replicates at several time points. This approach folds the technical variation of the pooled DNA sequencing approach in with the biological variance between replicate cultures. Any variance between the culture replicates at a given sampling (time) point, then, encompasses natural biological differences as well as variance arising from unintentional technical error. These scripts and figures explore the nature of this variation in our dataset to more fully describe the significance of the dynamic trajectories of allele frequency we observed.
+Ideally, technical replicates should be taken from any single population in order to ascertain the extent of the technical variation with this approach. In practice this may not be feasible due to constraints on individual samples or cost of analyses (library prep and sequencing).
+
+In our recent study (https://doi.org/10.1098/rspb.2020.3223) we used pooled DNA samples from five replicate cultures of larval oysters to evaluate changes in allele frequencies across larval development. Lacking technical replicates begs the question whether estimates of minor allele frequencies (MAF) in each culture are accurate to the 'true' value of that population. 
+
+In this scenario, we analyzed variance in MAF across all five biological replicates at several time points. This approach folds the technical variation of the pooled DNA sequencing approach in with the biological variance between replicate cultures. Any variance between the culture replicates at a given sampling (time) point, then, encompasses natural biological differences as well as variance arising from unintentional technical error. 
+
+This script explores the nature of this variation in our dataset to more fully describe the significance of the dynamic trajectories of allele frequency we observed.
 
 ```{r}
 #load the data:
@@ -48,10 +54,11 @@ m_af$age<-apply(m_af,1,function(x){
 head(m_af)
 m_af$age <- factor(m_af$age,levels=c("D2af","D6af","D10af","D16af","D22Baf"))
 ```
-The entire dataset is 473 loci with 10 406 datapoints in total.
+The entire dataset is *473* loci with *10 406* datapoints in total.
 Much too large to plot in full, individually.
 We can evaluate the nature of the variation in small random samples:
 First create a subset of the loci:
+
 ```{r}
 # a random selection:
 rand <- sample(unique(df$loc),16, replace=FALSE)
@@ -79,6 +86,7 @@ boring <- df %>%
   sample(.,16, replace=FALSE)
 ```
 From here we can plot what the variance looks like:
+
 ```{r}
 #plot:
 m_af%>%
